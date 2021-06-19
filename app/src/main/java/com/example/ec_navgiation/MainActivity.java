@@ -20,6 +20,6 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.mainText.setText("Hanji hello");
+        binding.mainText.setText("Hanji hello hor sunao");
     }
 }
