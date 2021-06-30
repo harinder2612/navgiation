@@ -1,8 +1,11 @@
 package com.example.ec_navgiation;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 
 import com.example.ec_navgiation.databinding.ActivityBottomNavigationBinding;
 import com.example.ec_navgiation.databinding.ActivityMainBinding;
@@ -20,6 +23,34 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.mainText.setText("Hanji hello hor sunao");
+
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.planets_array, android.R.layout.simple_spinner_item);
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        binding.spinner.setAdapter(adapter);
+
+        MyListData[] myListData = new MyListData[] {
+                new MyListData("Email", android.R.drawable.ic_dialog_email),
+                new MyListData("Info", android.R.drawable.ic_dialog_info),
+                new MyListData("Delete", android.R.drawable.ic_delete),
+                new MyListData("Dialer", android.R.drawable.ic_dialog_dialer),
+                new MyListData("Alert", android.R.drawable.ic_dialog_alert),
+                new MyListData("Map", android.R.drawable.ic_dialog_map),
+                new MyListData("Email", android.R.drawable.ic_dialog_email),
+                new MyListData("Info", android.R.drawable.ic_dialog_info),
+                new MyListData("Delete", android.R.drawable.ic_delete),
+                new MyListData("Dialer", android.R.drawable.ic_dialog_dialer),
+                new MyListData("Alert", android.R.drawable.ic_dialog_alert),
+                new MyListData("Map", android.R.drawable.ic_dialog_map),
+        };
+
+        MyListAdapter myListAdapter = new MyListAdapter(myListData);
+        binding.recyclerview.setHasFixedSize(true);
+        binding.recyclerview.setLayoutManager(new LinearLayoutManager(this));
+        binding.recyclerview.setAdapter(myListAdapter);
+
     }
 }
