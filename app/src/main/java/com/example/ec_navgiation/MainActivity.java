@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
@@ -74,4 +75,12 @@ public class MainActivity extends AppCompatActivity {
         binding.recyclerview.setAdapter(myListAdapter);
 
     }
+
+    public void myFunction()
+    {
+        int a = 1,b = 2,c = 3;
+
+        Log.d("result","Arithmetic value is: "+(a+b)*c);
+    }
+
 }
