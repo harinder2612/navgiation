@@ -4,8 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
 import com.example.ec_navgiation.databinding.ActivityBottomNavigationBinding;
 import com.example.ec_navgiation.databinding.ActivityMainBinding;
@@ -30,7 +33,25 @@ public class MainActivity extends AppCompatActivity {
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
+        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)
         binding.spinner.setAdapter(adapter);
+
+        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)
+        {
+            binding.toggleButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(MainActivity.this, "Toggle is: "+binding.toggleButton.getTextOn(), Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+
+        binding.click.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "Button clicked", Toast.LENGTH_LONG).show();
+            }
+        });
 
         MyListData[] myListData = new MyListData[] {
                 new MyListData("Email", android.R.drawable.ic_dialog_email),
