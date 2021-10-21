@@ -81,6 +81,6 @@ public class MainActivity extends AppCompatActivity {
     {
         int a = 1,b = 2,c = 3;
 
-        Log.d("result","Arithmetic value is: "+(a*b+2)+c);
+        Log.d("result","Arithmetic value is: "+(a*b+2+6)+c);
     }
 }
