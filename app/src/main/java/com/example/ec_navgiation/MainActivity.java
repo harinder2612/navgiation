@@ -6,13 +6,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
-<<<<<<< HEAD
-import android.view.View;
-=======
+import android.util.Log;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
->>>>>>> 07212067f34b371593f101b5e6a4cdce7151927d
 import android.widget.Toast;
 
 import com.example.ec_navgiation.databinding.ActivityBottomNavigationBinding;
@@ -26,26 +23,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       // setContentView(R.layout.activity_main);
+        // setContentView(R.layout.activity_main);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-<<<<<<< HEAD
-        if(getResources().getConfiguration().screenWidthDp > 600)
-        {
-            binding.mainText.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(MainActivity.this, "On click works in wide mode", Toast.LENGTH_SHORT).show();
-                }
-            });
-            
-            binding.click.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(MainActivity.this, "Button got clicked", Toast.LENGTH_SHORT).show();
-=======
 
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -54,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)
-        binding.spinner.setAdapter(adapter);
+            binding.spinner.setAdapter(adapter);
 
         if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)
         {
@@ -62,13 +44,10 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     Toast.makeText(MainActivity.this, "Toggle is: "+binding.toggleButton.getTextOn(), Toast.LENGTH_SHORT).show();
->>>>>>> 07212067f34b371593f101b5e6a4cdce7151927d
                 }
             });
         }
 
-<<<<<<< HEAD
-=======
         binding.click.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -102,8 +81,6 @@ public class MainActivity extends AppCompatActivity {
     {
         int a = 1,b = 2,c = 3;
 
-        Log.d("result","Arithmetic value is: "+(a+b)*c);
->>>>>>> 07212067f34b371593f101b5e6a4cdce7151927d
+        Log.d("result","Arithmetic value is: "+(a*b+2)+c);
     }
-
 }
