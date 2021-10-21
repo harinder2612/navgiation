@@ -14,9 +14,14 @@
         <activity
             android:name=".BottomNavigation"
             android:label="@string/title_activity_bottom_navigation">
+<<<<<<< HEAD
 
         </activity>
         <activity android:name=".MainActivity">
+=======
+        </activity>
+        <activity android:name=".MainActivity" >
+>>>>>>> 07212067f34b371593f101b5e6a4cdce7151927d
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

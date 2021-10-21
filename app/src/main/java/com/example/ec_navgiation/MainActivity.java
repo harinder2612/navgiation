@@ -1,9 +1,18 @@
 package com.example.ec_navgiation;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
+<<<<<<< HEAD
 import android.view.View;
+=======
+import android.util.Log;
+import android.view.View;
+import android.widget.ArrayAdapter;
+>>>>>>> 07212067f34b371593f101b5e6a4cdce7151927d
 import android.widget.Toast;
 
 import com.example.ec_navgiation.databinding.ActivityBottomNavigationBinding;
@@ -22,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+<<<<<<< HEAD
         if(getResources().getConfiguration().screenWidthDp > 600)
         {
             binding.mainText.setOnClickListener(new View.OnClickListener() {
@@ -35,9 +45,65 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Toast.makeText(MainActivity.this, "Button got clicked", Toast.LENGTH_SHORT).show();
+=======
+
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.planets_array, android.R.layout.simple_spinner_item);
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)
+        binding.spinner.setAdapter(adapter);
+
+        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)
+        {
+            binding.toggleButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(MainActivity.this, "Toggle is: "+binding.toggleButton.getTextOn(), Toast.LENGTH_SHORT).show();
+>>>>>>> 07212067f34b371593f101b5e6a4cdce7151927d
                 }
             });
         }
 
+<<<<<<< HEAD
+=======
+        binding.click.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "Button clicked", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        MyListData[] myListData = new MyListData[] {
+                new MyListData("Email", android.R.drawable.ic_dialog_email),
+                new MyListData("Info", android.R.drawable.ic_dialog_info),
+                new MyListData("Delete", android.R.drawable.ic_delete),
+                new MyListData("Dialer", android.R.drawable.ic_dialog_dialer),
+                new MyListData("Alert", android.R.drawable.ic_dialog_alert),
+                new MyListData("Map", android.R.drawable.ic_dialog_map),
+                new MyListData("Email", android.R.drawable.ic_dialog_email),
+                new MyListData("Info", android.R.drawable.ic_dialog_info),
+                new MyListData("Delete", android.R.drawable.ic_delete),
+                new MyListData("Dialer", android.R.drawable.ic_dialog_dialer),
+                new MyListData("Alert", android.R.drawable.ic_dialog_alert),
+                new MyListData("Map", android.R.drawable.ic_dialog_map),
+        };
+
+        MyListAdapter myListAdapter = new MyListAdapter(myListData);
+        binding.recyclerview.setHasFixedSize(true);
+        binding.recyclerview.setLayoutManager(new LinearLayoutManager(this));
+        binding.recyclerview.setAdapter(myListAdapter);
+
     }
+
+    public void myFunction()
+    {
+        int a = 1,b = 2,c = 3;
+
+        Log.d("result","Arithmetic value is: "+(a+b)*c);
+>>>>>>> 07212067f34b371593f101b5e6a4cdce7151927d
+    }
+
 }
