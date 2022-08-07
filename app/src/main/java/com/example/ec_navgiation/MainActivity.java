@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(MainActivity.this, "Button clicked", Toast.LENGTH_LONG).show();
+                binding.mShimmerViewContainer.stopShimmerAnimation();
             }
         });
 
@@ -74,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
         binding.recyclerview.setHasFixedSize(true);
         binding.recyclerview.setLayoutManager(new LinearLayoutManager(this));
         binding.recyclerview.setAdapter(myListAdapter);
+
+        binding.mShimmerViewContainer.startShimmerAnimation();
 
     }
 
