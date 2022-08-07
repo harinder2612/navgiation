@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 binding.mShimmerViewContainer.stopShimmerAnimation();
             }
         });
+        //added comment
 
         MyListData[] myListData = new MyListData[] {
                 new MyListData("Email", android.R.drawable.ic_dialog_email),
